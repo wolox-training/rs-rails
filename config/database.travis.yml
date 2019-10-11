@@ -1,6 +1,6 @@
 test:
   adapter: postgresql
   encoding: unicode
-  database: travis_wbooks_api_test
-  username: travis_wbooks_api
-  password: travis_wbooks_api
+  database: <%= ENV['RS-RAILS_TRAVIS_DATABASE_NAME'] %>
+  username: <%= ENV['RS-RAILS_TRAVIS_DATABASE_USER_NAME'] %>
+  password: <%= ENV['RS-RAILS_TRAVIS_DATABASE_USER_PASSWORD'] %>
