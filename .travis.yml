@@ -23,10 +23,10 @@ before_install:
   - gem update --system
 
 before_script:
-  - cp config/database.yml config/database.travis.yml
-  - psql -c "CREATE USER \"wbooks_api\" WITH PASSWORD 'wbooks_api';" -U postgres
-  - psql -c "DROP DATABASE IF EXISTS \"wbooks_api_test\";" -U postgres
-  - psql -c "CREATE DATABASE \"wbooks_api_test\" ENCODING 'utf8';" -U postgres
+  - cp config/database.travis.yml config/database.yml
+  - psql -c "CREATE USER \"travis_wbooks_api\" WITH PASSWORD 'travis_wbooks_api';" -U postgres
+  - psql -c "DROP DATABASE IF EXISTS \"travis_wbooks_api_test\";" -U postgres
+  - psql -c "CREATE DATABASE \"travis_wbooks_api_test\" ENCODING 'utf8';" -U postgres
   - bundle exec rake db:migrate
 
 script:
