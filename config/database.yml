@@ -23,9 +23,9 @@ default: &default
 
 development:
   <<: *default
-  database: <%= ENV['RS-RAILS_DEVELOPMENT_DATABASE_NAME'] %>
-  username: <%= ENV['RS-RAILS_DEVELOPMENT_DATABASE_USERNAME'] %>
-  password: <%= ENV['RS-RAILS_DEVELOPMENT_DATABASE_PASSWORD'] %>
+  database: <%= ENV['RS_RAILS_DEVELOPMENT_DATABASE_NAME'] %>
+  username: <%= ENV['RS_RAILS_DEVELOPMENT_DATABASE_USERNAME'] %>
+  password: <%= ENV['RS_RAILS_DEVELOPMENT_DATABASE_PASSWORD'] %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
