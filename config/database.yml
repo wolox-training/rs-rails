@@ -59,9 +59,9 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: <%= ENV['RS-RAILS_TEST_DATABASE_NAME'] %>
-  username: <%= ENV['RS-RAILS_TEST_DATABASE_USERNAME'] %>
-  password: <%= ENV['RS-RAILS_TEST_DATABASE_PASSWORD'] %>
+  database: <%= ENV['RS_RAILS_TEST_DATABASE_NAME'] %>
+  username: <%= ENV['RS_RAILS_TEST_DATABASE_USERNAME'] %>
+  password: <%= ENV['RS_RAILS_TEST_DATABASE_PASSWORD'] %>
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -84,6 +84,6 @@ test:
 #
 production:
   <<: *default
-  database: <%= ENV['RS-RAILS_PRODUCTION_DATABASE_NAME'] %>
-  username: <%= ENV['RS-RAILS_PRODUCTION_DATABASE_USERNAME'] %>
-  password: <%= ENV['RS-RAILS_PRODUCTION_DATABASE_PASSWORD'] %>
+  database: <%= ENV['RS_RAILS_PRODUCTION_DATABASE_NAME'] %>
+  username: <%= ENV['RS_RAILS_PRODUCTION_DATABASE_USERNAME'] %>
+  password: <%= ENV['RS_RAILS_PRODUCTION_DATABASE_PASSWORD'] %>
