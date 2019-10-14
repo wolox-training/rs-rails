@@ -2,5 +2,5 @@ test:
   adapter: postgresql
   encoding: unicode
   database: <%= ENV['RS_RAILS_TRAVIS_DATABASE_NAME'] %>
-  username: <%= ENV['RS_RAILS_TRAVIS_DATABASE_USER_NAME'] %>
-  password: <%= ENV['RS_RAILS_TRAVIS_DATABASE_USER_PASSWORD'] %>
+  username: <%= ENV['RS_RAILS_TRAVIS_USER_NAME'] %>
+  password: <%= ENV['RS_RAILS_TRAVIS_PASSWORD'] %>
