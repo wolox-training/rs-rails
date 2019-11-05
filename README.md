@@ -1,4 +1,7 @@
 # rs-rails
+
+[![Build Status](https://travis-ci.org/wolox-training/rs-rails.svg?branch=master)](https://travis-ci.org/wolox-training/rs-rails)
+
 # README
 
 This README would normally document whatever steps are necessary to get the
