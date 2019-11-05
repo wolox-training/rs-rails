@@ -4,4 +4,3 @@ test:
   database: travis_wbooks_api_test
   username: travis_wbooks_api
   password: travis_wbooks_api
-  

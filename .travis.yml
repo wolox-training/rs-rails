@@ -40,4 +40,3 @@ script:
 
 cache:
   bundler: true
-  
