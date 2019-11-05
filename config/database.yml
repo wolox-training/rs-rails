@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: wbooks_api
+  database: wbooks_api_development
   username: wbooks_api
   password: <%= ENV['RS-RAILS_DATABASE_PASSWORD'] %>
 
@@ -84,6 +84,6 @@ test:
 #
 production:
   <<: *default
-  database: rs-rails_production
+  database: wbooks_api_production
   username: rs-rails
   password: <%= ENV['RS-RAILS_DATABASE_PASSWORD'] %>
