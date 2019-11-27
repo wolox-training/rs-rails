@@ -36,6 +36,12 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise_token_auth', '~> 0.1.31'
 
+group :test do
+  gem 'database_cleaner', '~> 1.5', '>= 1.5.3'
+  gem 'faker', '~> 1.6', '>= 1.6.3'
+  gem 'shoulda-matchers', '~> 3.1', '>= 3.1.1'
+end
+
 group :development, :test do
   gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -45,7 +51,10 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'rubocop', '~> 0.75.0', require: false
   gem 'rubocop-rails', '~> 2.3', '>= 2.3.2'
+  gem 'rubocop-rspec', '~> 1.27'
   gem 'rspec', '~> 3.4'
+  gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
+  gem 'factory_bot_rails', '~> 4.8', '>= 4.8.2'
 end
 
 group :development do
