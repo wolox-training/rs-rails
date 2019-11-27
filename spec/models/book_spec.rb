@@ -7,9 +7,9 @@ describe Book do
 
   it { expect(book).to be_valid }
   it { expect(book).to validate_presence_of(:genre) }
-  it { is_expected.to validate_presence_of(:author) }
-  it { is_expected.to validate_presence_of(:image) }
-  it { is_expected.to validate_presence_of(:title) }
-  it { is_expected.to validate_presence_of(:editor) }
-  it { is_expected.to validate_presence_of(:year) }
+  it { expect(book).to validate_presence_of(:author) }
+  it { expect(book).to validate_presence_of(:image) }
+  it { expect(book).to validate_presence_of(:title) }
+  it { expect(book).to validate_presence_of(:editor) }
+  it { expect(book).to validate_presence_of(:year) }
 end
