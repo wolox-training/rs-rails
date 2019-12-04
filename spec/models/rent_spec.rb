@@ -2,6 +2,10 @@
 
 require 'rails_helper'
 
-RSpec.describe Rent, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Rent do
+  subject(:rent) { build(:rent) }
+
+  it { expect(rent).to be_valid }
+  it { expect(rent).to validate_presence_of(:start_rent) }
+  it { expect(rent).to validate_presence_of(:end_rent) }
 end
