@@ -19,7 +19,6 @@ module Api
       def book
         @book ||= Book.find(params.require(:id))
       end
-
     end
   end
 end
