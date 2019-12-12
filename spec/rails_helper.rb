@@ -4,6 +4,7 @@
 require 'spec_helper'
 require 'shoulda-matchers'
 require 'support/factory_bot'
+require 'support/shared_contexts'
 
 ENV['RAILS_ENV'] ||= 'test'
 
@@ -40,7 +41,7 @@ end
 RSpec.configure do |config|
   config.include(Shoulda::Matchers::ActiveModel, type: :model)
   config.include(Shoulda::Matchers::ActiveRecord, type: :model)
-
+  config.include Devise::Test::ControllerHelpers, type: :controller
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
