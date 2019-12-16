@@ -35,6 +35,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'devise_token_auth', '~> 0.1.31'
+gem 'active_model_serializers', '~> 0.10.0'
+gem 'wor-paginate', '~> 0.1.1'
 
 group :test do
   gem 'database_cleaner', '~> 1.5', '>= 1.5.3'
