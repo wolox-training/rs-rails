@@ -84,6 +84,4 @@ test:
 #
 production:
   <<: *default
-  database: <%= ENV['RS_RAILS_DATABASE_NAME'] %>
-  username: <%= ENV['RS_RAILS_DATABASE_USERNAME'] %>
-  password: <%= ENV['RS_RAILS_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
