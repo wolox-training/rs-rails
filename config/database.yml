@@ -84,6 +84,6 @@ test:
 #
 production:
   <<: *default
-  database: wbooks_api_production
-  username: rs-rails
+  database: <%= ENV['RS_RAILS_DATABASE_NAME'] %>
+  username: <%= ENV['RS_RAILS_DATABASE_USERNAME'] %>
   password: <%= ENV['RS_RAILS_DATABASE_PASSWORD'] %>
