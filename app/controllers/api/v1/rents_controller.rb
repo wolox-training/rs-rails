@@ -6,19 +6,26 @@ module Api
         before_action :authenticate_user!
   
         def index
-          rents = Rents.all
-          render_paginated books, each_serializer: RentSerializer
+          rents = Rent.all
+          render_paginated rents, each_serializer: RentSerializer
         end
   
         def create
-          render json: book
+          Rent.create(rent_params)
+          render json: rent
         end
   
         private
   
-        def book
-          @book ||= Book.find(params.require(:id))
+        def rent
+          @rent ||= Rent.find(params.require(:id))
         end
+
+        def rent_params
+          params.require(:rent).permit(:id, :start_rent, :end_rent, :book, :user)
+        end
+
+
       end
     end
   end
