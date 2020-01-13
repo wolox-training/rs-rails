@@ -2,8 +2,8 @@
 
 FactoryBot.define do
   factory :rent do
-    user { FactoryBot.create(:user) }
-    book { FactoryBot.create(:book) }
+    user_id { FactoryBot.create(:user).id }
+    book_id { FactoryBot.create(:book).id }
     start_rent { '2019-12-03' }
     end_rent { '2019-12-04' }
   end

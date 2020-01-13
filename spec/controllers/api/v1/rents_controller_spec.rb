@@ -5,6 +5,16 @@ require 'rails_helper'
 describe Api::V1::RentsController, type: :controller do
   include_context 'Authenticated User'
 
+  describe 'POST #create' do
+    context 'When create a new rent' do
+      it 'creates a new rent' do
+        expect do
+          post :create, params: { rent: attributes_for(:rent) }
+        end.to change(Rent, :count).by(1)
+      end
+    end
+  end
+
   describe 'GET #index' do
     context 'When fetching all rents' do
       let!(:rents) { create_list(:rent, 3) }

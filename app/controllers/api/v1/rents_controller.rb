@@ -6,23 +6,17 @@ module Api
       before_action :authenticate_user!
 
       def index
-        rents = Rent.all
-        render_paginated rents, each_serializer: RentSerializer
-      end
-
-      def find_rents_by_user
-        rents = Rent.where(user_id: params[:user_id])
-        render_paginated rents, each_serializer: RentSerializer
-      end
-
-      def find_rents_by_book
-        rents = Rent.where(book_id: params[:book_id])
+        rents = Rent.filter(params.slice(:book_id, :user_id))
         render_paginated rents, each_serializer: RentSerializer
       end
 
       def create
-        Rent.create(rent_params)
-        render json: rent
+        rent = Rent.new(rent_params)
+        if rent.save!
+          render json: rent, status: :created
+        else
+          render json: { errors: rent.erros }, status: :precondition_failed
+        end
       end
 
       private
@@ -32,7 +26,7 @@ module Api
       end
 
       def rent_params
-        params.require(:rent).permit(:id, :start_rent, :end_rent, :book, :user)
+        params.require(:rent).permit(:id, :start_rent, :end_rent, :book_id, :user_id)
       end
     end
   end

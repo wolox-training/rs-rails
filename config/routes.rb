@@ -8,8 +8,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :books, only: %i[index show]
       resources :rents, only: %i[create index]
-      get '/users/:user_id/rents', to: 'rents#find_rents_by_user'
-      get '/books/:book_id/rents', to: 'rents#find_rents_by_book'
+      get '/users/:user_id/rents', to: 'rents#index'
+      get '/books/:book_id/rents', to: 'rents#index'
     end
   end
 end
