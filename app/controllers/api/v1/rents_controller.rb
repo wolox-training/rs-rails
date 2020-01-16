@@ -11,9 +11,10 @@ module Api
       end
 
       def create
-        rent = Rent.new(rent_params)
-        if rent.save!
-          render json: rent, status: :created
+        new_rent = Rent.new(rent_params)
+        if new_rent.save!
+          RentMailer.with(rent: new_rent, user: current_user).new_rent_email.deliver_later
+          render json: new_rent, status: :created
         else
           render json: { errors: rent.erros }, status: :precondition_failed
         end
