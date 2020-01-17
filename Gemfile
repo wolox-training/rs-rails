@@ -37,6 +37,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'devise_token_auth', '~> 0.1.31'
 gem 'wor-paginate', '~> 0.1.1'
+gem 'sidekiq', '~> 4.1', '>= 4.1.2'
 
 group :test do
   gem 'database_cleaner', '~> 1.5', '>= 1.5.3'
