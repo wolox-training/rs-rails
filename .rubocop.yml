@@ -4,4 +4,5 @@ Documentation:
 LineLength:
    Max: 99
 Metrics/BlockLength:
-   Enabled: false
+  ExcludedMethods: ['describe', 'context']
+
